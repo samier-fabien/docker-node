@@ -33,6 +33,7 @@ services:
         restart: always
         networks:
             - dev
+
     node:
       build: node
       container_name: docker_node
@@ -43,10 +44,11 @@ services:
       volumes:
         - ./:/home/node/app
       expose:
-        - "8081"
+        - "8888"
       command: "npm start"
       networks:
             - dev
+      restart: always
 
 networks:
     dev:
